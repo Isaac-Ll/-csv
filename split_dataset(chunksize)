@@ -1,0 +1,5 @@
+def split_dataset(chunksize):
+    i = 0
+    for chunk in pd.read_csv(r'.\{}\{}.csv'.format('',''), chunksize=chunksize):
+        i +=1
+        chunk.to_csv(r'.\{}\{}_Chunk_{}.csv'.format('','',i),index=False)
